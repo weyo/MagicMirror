@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>me.weyo.magicmirror</groupId>
+    <artifactId>server</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>server Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.hp.hpl.jena</groupId>
+            <artifactId>json-jena</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.iflytek</groupId>
+            <artifactId>msc</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.cmu.sphinx</groupId>
+            <artifactId>sphinx4-core</artifactId>
+            <version>5prealpha-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.cmu.sphinx</groupId>
+            <artifactId>sphinx4-data</artifactId>
+            <version>5prealpha-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 
 	weather.init();
     
-    aqi.init();
+    // aqi.init();
 
 	news.init();
 

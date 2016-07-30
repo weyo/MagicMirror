@@ -19,6 +19,6 @@ public class AqiController extends BaseController {
 
     @Override
     public void doLog(String msg, Object object) {
-        LOG.info("AQI handled: " + msg);
+        LOG.debug("AQI handled: " + msg);
     }
 }

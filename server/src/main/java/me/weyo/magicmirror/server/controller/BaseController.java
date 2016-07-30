@@ -23,7 +23,7 @@ public abstract class BaseController extends HttpServlet {
     public String contentType = "text/html";
 
     public final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType(this.contentType);
+        response.setContentType(this.contentType + ";charset=UTF-8");
         PrintWriter out = response.getWriter();
         URL url = new URL(request.getParameter("url"));
         URLConnection conn = url.openConnection();

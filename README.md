@@ -1,7 +1,7 @@
 MagicMirror 魔镜
 ===========
 
-![v0.1](images/v0.1.png)
+![v0.2](images/v0.2.png)
 
 ## 说明
 
@@ -17,7 +17,7 @@ MagicMirror 魔镜
 
 - 增加语音识别功能<sup>pre-alpha</sup>
 
-- 增加实时空气质量展示<sup>beta</sup>
+- 增加实时空气质量展示
 
 - 调整配置文件上传方式
 

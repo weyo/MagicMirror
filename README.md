@@ -27,7 +27,7 @@ MagicMirror 魔镜
 
 1. 将本项目 clone 到本地；
 
-2. 将配置文件 `js/default-config.js` 的文件名修改为 `config.js`，或者复制该文件，将新文件重命名为 `config.js`；
+2. 将配置文件 `js/config-default.js` 的文件名修改为 `config.js`，或者复制该文件，将新文件重命名为 `config.js`；
 
 3. 在 `config.js` 中根据个人需要修改以下配置信息：
 	- 时间格式

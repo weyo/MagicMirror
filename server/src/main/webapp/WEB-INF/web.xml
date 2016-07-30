@@ -9,8 +9,16 @@
         <servlet-name>Calendar</servlet-name>
         <servlet-class>me.weyo.magicmirror.server.controller.CalendarController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AQI</servlet-name>
+        <servlet-class>me.weyo.magicmirror.server.controller.AqiController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Calendar</servlet-name>
         <url-pattern>/calendar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AQI</servlet-name>
+        <url-pattern>/aqi</url-pattern>
     </servlet-mapping>
 </web-app>

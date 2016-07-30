@@ -1,25 +1,24 @@
 package me.weyo.magicmirror.server.controller;
 
 import javax.servlet.ServletException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * @author WeYo
  */
-public class CalendarController extends BaseController {
+public class AqiController extends BaseController {
 
     /** Serial ID */
-    private static final long serialVersionUID = 6683891537044452693L;
-    private static final Logger LOG = LoggerFactory.getLogger(CalendarController.class);
-
+    private static final long serialVersionUID = -2640350579706749958L;
+    private static final Logger LOG = LoggerFactory.getLogger(AqiController.class);
+    
     public void init() throws ServletException {
-        this.contentType = "text/calendar";
+        this.contentType = "application/json";
     }
 
     @Override
     public void doLog(String msg, Object object) {
-        LOG.debug("Calendar handled: " + msg);
+        LOG.info("AQI handled: " + msg);
     }
 }

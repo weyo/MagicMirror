@@ -8,14 +8,14 @@ var config = {
             q: 'Shanghai', // 城市
             units: 'metric',
             //lang: 'zh-cn',
-            APPID: 'df3d7be7e1e310b9fead2abb981c2e5b'
+            APPID: '***' // 在 OpenWeatherMap 网站上注册的 APPID
         },
         interval: 60000,
         fadeInterval: 1000
     },
     aqi: {
         city: 'shanghai', // 城市
-        AppKey: '5j1znBVAsnSf5xQyNQyq',
+        AppKey: '***', // 在 PM25.in 网站上注册的 AppKey
         interval: 300000,
         fadeInterval: 1000
     },
@@ -40,8 +40,7 @@ var config = {
     },
     calendar: {
         maximumEntries: 10, // 可以显示的最大日程数量
-        url: "https://p39-calendars.icloud.com/published/2/heCBb-ZnnMcDrwCzlwgCB0HPQOqYxdgL1J0-3GOixwKLcQ5eB9ZCmhtVVm-8TgxrFgHVswivMu3yt-k5hmnPPNb7y65VdH6rg_oHU0g6ioc"
-		//url: "https://p01-calendarws.icloud.com/ca/subscribe/1/n6x7Farxpt7m9S8bHg1TGArSj7J6kanm_2KEoJPL5YIAk3y70FpRo4GyWwO-6QfHSY5mXtHcRGVxYZUf7U3HPDOTG5x0qYnno1Zr_VuKH2M"
+		url: "https://p01-calendarws.icloud.com/ca/subscribe/1/n6x7Farxpt7m9S8bHg1TGArSj7J6kanm_2KEoJPL5YIAk3y70FpRo4GyWwO-6QfHSY5mXtHcRGVxYZUf7U3HPDOTG5x0qYnno1Zr_VuKH2M"
     },
     news: {
         //feed: 'http://news.baidu.com/n?cmd=1&class=finannews&tn=rss'

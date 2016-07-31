@@ -19,9 +19,18 @@ var config = {
         interval: 300000,
         fadeInterval: 1000
     },
+    ai: {
+        fadeInterval: 500,
+        cleanInterval: 60000
+    },
     compliments: {
         interval: 30000,
         fadeInterval: 4000,
+        timeParams: {
+            morning: 3,
+            afternoon: 12,
+            evening: 18
+        },
         morning: [
             '喜欢清晨的阳光啊',
             '昨晚睡得好吗',

@@ -41,6 +41,8 @@ jQuery(document).ready(function($) {
 	weather.init();
     
     // aqi.init();
+    
+    ai.init();
 
 	news.init();
 

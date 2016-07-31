@@ -9,6 +9,7 @@ var aqi = {
     aqiQualityLocation : '.aqi-quality',
     updateInterval : config.aqi.interval,
     fadeInterval : config.aqi.fadeInterval,
+    intervalId : null
 }
 
 aqi.updateData = function(data) {

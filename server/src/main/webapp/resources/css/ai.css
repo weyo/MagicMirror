@@ -1,0 +1,45 @@
+.ai {
+    width: 373px;
+    height: 800px;
+    display: block;
+    overflow: hidden;
+    text-align: justify;
+    text-justify: auto;
+}
+
+.ai dl {
+    position: relative;
+    margin: 0;
+}
+
+.ai dt {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    height : 48px;
+    width : 48px;
+    margin: 2px;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+    background-color: #696969;
+}
+
+.words {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 4px;
+    width: 250px;
+}
+
+.clear {
+    clear: both;
+}

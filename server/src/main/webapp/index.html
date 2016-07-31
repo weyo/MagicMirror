@@ -3,9 +3,11 @@
 <head>
 <title>Magic Mirror</title>
 <link rel="stylesheet" type="text/css"
-    href="resources/css/main.css?v=102">
+    href="resources/css/main.css">
 <link rel="stylesheet" type="text/css"
     href="resources/css/weather-icons.css">
+<link rel="stylesheet" type="text/css"
+    href="resources/css/ai.css">
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
@@ -19,6 +21,10 @@
         <div class="windsun small dimmed"></div>
         <div class="temp"></div>
         <div class="forecast small dimmed"></div>
+        <br />
+        <div class="ai xsmall">
+            <dl class="saying"></dl>
+        </div>
     </div>
     <div class="top center-hor">
         <div class="aqi-info xsmall"></div>
@@ -32,10 +38,10 @@
         <div class="news medium"></div>
     </div>
 
-
     <script src="resources/js/jquery.js"></script>
     <script src="resources/js/jquery.feedToJSON.js"></script>
     <script src="resources/js/ical_parser.js"></script>
+    <script src="resources/js/websocket.js"></script>
     <script src="resources/js/moment-with-locales.min.js"></script>
     <script src="resources/js/config.js"></script>
     <script src="resources/js/rrule.js"></script>
@@ -43,6 +49,7 @@
     <script src="resources/js/compliments/compliments.js"></script>
     <script src="resources/js/weather/weather.js"></script>
     <script src="resources/js/aqi/aqi.js"></script>
+    <script src="resources/js/ai/ai.js"></script>
     <script src="resources/js/time/time.js"></script>
     <script src="resources/js/news/news.js"></script>
     <script src="resources/js/main.js"></script>

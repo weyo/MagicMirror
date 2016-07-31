@@ -11,45 +11,26 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @ServerEndpoint("/websocket")
 public class WebSocket {
     /** 在线客户端计数 */
     private static AtomicInteger onlineCount = new AtomicInteger(0);
     private static CopyOnWriteArraySet<WebSocket> webSocketSet = new CopyOnWriteArraySet<WebSocket>();
-
-    static {
-        // 执行线程，待优化
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    // 群发消息
-                    if (onlineCount.get() > 0) {
-                        String info = "你好";
-                        for (WebSocket item : webSocketSet) {
-                            try {
-                                item.sendMessage(info);
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                                continue;
-                            }
-                        }
-                    } else {
-                        System.out.println("Nobody here...");
-                    }
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-        }).start();
-    }
+    private static final Logger LOG = LoggerFactory.getLogger(WebSocket.class);
 
     // 与某个客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
+    
+    public static int getOnlineCount() {
+        return onlineCount.get();
+    }
+    
+    public static CopyOnWriteArraySet<WebSocket> getWebSocketSet() {
+        return webSocketSet;
+    }
 
     /**
      * 连接建立成功调用的方法
@@ -62,7 +43,7 @@ public class WebSocket {
         this.session = session;
         webSocketSet.add(this); // 加入set中
         onlineCount.incrementAndGet(); // 在线数加1
-        System.out.println("有新连接加入！当前在线人数为" + onlineCount.get());
+        LOG.debug("有新连接加入！当前在线人数为" + onlineCount.get());
     }
 
     /**
@@ -72,7 +53,7 @@ public class WebSocket {
     public void onClose() {
         webSocketSet.remove(this); // 从set中删除
         onlineCount.decrementAndGet(); // 在线数减1
-        System.out.println("有一连接关闭！当前在线人数为" + onlineCount.get());
+        LOG.debug("有一连接关闭！当前在线人数为" + onlineCount.get());
     }
 
     /**
@@ -85,7 +66,7 @@ public class WebSocket {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        System.out.println("来自客户端的消息:" + message);
+        LOG.info("来自客户端的消息:" + message);
     }
 
     /**
@@ -96,8 +77,7 @@ public class WebSocket {
      */
     @OnError
     public void onError(Session session, Throwable error) {
-        System.out.println("发生错误");
-        error.printStackTrace();
+        LOG.error("发生错误", error);
     }
 
     /**

@@ -40,6 +40,11 @@ body, html {
     line-height: 100px;
 }
 
+.center-ver-new {
+    position: absolute;
+    top: 30%;
+}
+
 .lower-third {
     position: absolute;
     top: 66.666%;

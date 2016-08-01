@@ -4,7 +4,7 @@
     <groupId>me.weyo.magicmirror</groupId>
     <artifactId>server</artifactId>
     <packaging>war</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.3</version>
     <name>server Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
@@ -62,8 +62,15 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
+        <finalName>server</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>

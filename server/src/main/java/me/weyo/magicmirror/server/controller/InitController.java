@@ -27,7 +27,7 @@ public class InitController extends HttpServlet {
         
         ExecutorService exec = Executors.newSingleThreadExecutor();
         exec.execute(new Recorder(new WebSocketService(), new AiService()));
-        
+        exec.shutdown();
         LOG.info("初始化完成");
     }
     

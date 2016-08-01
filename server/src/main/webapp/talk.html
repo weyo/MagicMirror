@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <title>Magic Mirror</title>
-<link rel="stylesheet" type="text/css"
-    href="resources/css/main.css">
-<link rel="stylesheet" type="text/css"
-    href="resources/css/weather-icons.css">
-<link rel="stylesheet" type="text/css"
-    href="resources/css/ai.css">
-<script src="resources/js/ai/command.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="resources/css/main.css">
+<link rel="stylesheet" type="text/css" href="resources/css/ai.css">
+<script src="resources/js/ai/command.js" type="text/javascript"
+    charset="UTF-8"></script>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
-    <h4>Welcome</h4>
-    <div class="xsmall">请输入:</div>
-    <input id="text" type="text" name="message" style="height:25px; font-size:22px;" />
-    <button onclick="send()" style="height:31px; font-size:22px;">确认</button>
+    <div class="top left">
+        <div>Welcome</div>
+        <div class="talk">
+            <input id="text" class="fleft" type="text" name="message"
+                placeholder="请在这里输入文字" />
+            <button class="fleft" onclick="send()">确认</button>
+        </div>
+    </div>
 </body>
 </html>

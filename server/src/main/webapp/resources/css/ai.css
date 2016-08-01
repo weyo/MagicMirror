@@ -43,3 +43,16 @@
 .clear {
     clear: both;
 }
+
+.talk input {
+    margin: 2px;
+    height:50px;
+    max-width: 80%;
+    font-size:42px;
+}
+
+.talk button {
+    margin: 2px;
+    height:57px;
+    font-size:42px;
+}

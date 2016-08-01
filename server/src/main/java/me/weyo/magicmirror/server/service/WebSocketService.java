@@ -26,7 +26,7 @@ public class WebSocketService {
                 }
             }
         } else {
-            LOG.debug("Nobody here...");
+            LOG.info("Nobody here...");
         }
     }
 

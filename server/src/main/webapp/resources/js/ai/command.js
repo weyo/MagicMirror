@@ -1,5 +1,6 @@
 function send() {
     url = "command?message=" + encodeURIComponent(document.getElementById('text').value);
+    document.getElementById('text').value = "";
 
     try {
         xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest()

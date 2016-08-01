@@ -20,7 +20,9 @@ public class CommandController extends HttpServlet {
     private static final Logger LOG = LoggerFactory.getLogger(CommandController.class);
 
     public final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        LOG.info(request.getParameter("message"));
+        String message = request.getParameter("message");
+        String decodeMessage = new String(message.getBytes("ISO-8859-1"), "utf-8");
+        LOG.info(decodeMessage);
     }
 
 }

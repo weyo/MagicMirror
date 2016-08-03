@@ -20,7 +20,7 @@ public class AiService {
 
     public void request(String info) {
         ExecutorService exec = Executors.newSingleThreadExecutor();
-        this.ai = exec.submit(new AiController());
+        this.ai = exec.submit(new AiController(info));
         exec.shutdown();
     }
 

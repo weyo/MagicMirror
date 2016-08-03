@@ -15,7 +15,7 @@
     </servlet>
         <servlet>
         <servlet-name>Command</servlet-name>
-        <servlet-class>me.weyo.magicmirror.server.controller.CommandController</servlet-class>
+        <servlet-class>me.weyo.magicmirror.server.controller.HttpCommandController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>InitServlet</servlet-name>

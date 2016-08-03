@@ -4,6 +4,9 @@ var ai = {
     url: 'ws://localhost:8080/server/websocket',
 	fadeInterval: config.ai.fadeInterval,
     cleanInterval: config.ai.cleanInterval,
+    appKey: config.ai.AppKey,
+    loc: config.ai.loc,
+    id: config.ai.id,
     mmAvatar: 'lmm.jpg',
     defAvatar: 'avatar.png',
     sayingTime: new Date(),
@@ -29,11 +32,10 @@ ai.saying = function (data) {
      * 2 —— AI 返回超链接
      */
     switch (data[0]) {
-        case '0':
-            break;
         case '1':
             avatar = ai.defAvatar;
             loc = 'fright';
+        case '0':
             line = dt_head + loc + dt_mid1 + avatar + dt_mid2 + loc + dt_mid3 + words + dt_tail;
             break;
         case '2':

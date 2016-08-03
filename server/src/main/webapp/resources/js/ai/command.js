@@ -1,5 +1,11 @@
 function send() {
-    url = "command?message=" + encodeURIComponent(document.getElementById('text').value);
+    var message = new Object();
+    message.info = encodeURIComponent(document.getElementById('text').value);
+    message.key = ai.appKey;
+    message.loc = encodeURIComponent(ai.loc);
+    message.id = ai.id;
+    url = "command?message=" + JSON.stringify(message);
+    
     document.getElementById('text').value = "";
 
     try {

@@ -3,6 +3,8 @@ MagicMirror 魔镜
 
 ![v0.2](pics/v0.2.png)
 
+![v0.3](pics/v0.3.png)
+
 ## 说明
 
 本项目为个人定制版魔镜。与[原版](https://github.com/MichMich/MagicMirror)的主要区别有：

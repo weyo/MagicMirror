@@ -20,8 +20,11 @@ var config = {
         fadeInterval: 1000
     },
     ai: {
+        AppKey: '***', // 在 tuling123.com 网站上注册的 Key
+        loc: '上海市', // 城市名，中文
+        id: 12345678, // 会话 ID，任意设置一个数字
         fadeInterval: 500,
-        cleanInterval: 60000
+        cleanInterval: 300000 // 最后一次接收到新的对话请求之后的等待清理对话列表时间
     },
     compliments: {
         interval: 30000,

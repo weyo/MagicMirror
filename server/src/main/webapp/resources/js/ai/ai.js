@@ -1,7 +1,7 @@
 var ai = {
 	aiLocation: '.ai',
     sayingLocation: '.saying',
-    url: 'ws://localhost:8080/server/websocket',
+    url: 'localhost:8080/server/websocket',
 	fadeInterval: config.ai.fadeInterval,
     cleanInterval: config.ai.cleanInterval,
     appKey: config.ai.AppKey,
@@ -24,7 +24,7 @@ ai.saying = function (data) {
     var words = data.slice(2);
     var loc = 'fleft';
     
-    var line = dt_head + loc + dt_mid1 + avatar + dt_mid2 + loc + dt_mid3 + words + dt_tail;
+    var line = "";
     /*
      * 接收数据解析：
      * 0 —— AI
@@ -39,7 +39,11 @@ ai.saying = function (data) {
             line = dt_head + loc + dt_mid1 + avatar + dt_mid2 + loc + dt_mid3 + words + dt_tail;
             break;
         case '2':
-            line = '<dt><IFRAME name="XXX" frameborder=0 width=390px height=480px src="' + words + '"></IFRAME></dt>';
+            sn = words.indexOf('|');
+            line = dt_head + loc + dt_mid1 + avatar + dt_mid2 + loc + dt_mid3 + words.slice(0, sn) + dt_tail;
+            $(ai.sayingLocation).append(line);
+            ai.scrollWords();
+            line = '<dt><IFRAME name="XXX" frameborder=0 width=390px height=480px src="' + words.slice(sn + 1) + '"></IFRAME></dt>';
             break;
         default:
             console.log('不支持的数据:' + data);
@@ -70,11 +74,11 @@ ai.clearWords = function () {
 }
 
 ai.init = function () {
+    
     new websocket(this.url, this.saying);
     
     this.intervalId = setInterval(function() {
         this.clearWords();
     }.bind(this), this.cleanInterval);
     
-    // 增加定时断线重连机制？
 }

@@ -47,7 +47,7 @@ public class AiController implements Callable<String> {
             ret = "0|" + jsonObj.getString("text");
             break;
         case 200000:
-            ret = "2|" + jsonObj.getString("url");
+            ret = "2|" + jsonObj.getString("text") + "|" + jsonObj.getString("url");
             break;
         default:
             ret = "0|" + jsonObj.getString("对不起，亲，我现在还听不懂这句话");

@@ -3,7 +3,7 @@ MagicMirror 魔镜
 
 ![v0.2](pics/v0.2.png)
 
-![v0.3](pics/v0.3.png)
+<img src="pics/v0.3.png" width = "500" height = "660" alt="pic3" align=center />
 
 ## 说明
 
@@ -50,16 +50,21 @@ MagicMirror 魔镜
 
 ## 其他说明
 
-1. 由于某些众所周知的原因，日历功能暂只支持 iPhone，而且功能不是很稳定；
+1. 本项目遵守 `MIT License`；
 
-2. 默认关闭空气质量功能（减少对 PM25.in 网站的无效请求），需要开启请向 [PM25.in](http://pm25.in/api_doc) 网站申请 AppKey 并谨慎使用；
+2. 由于某些众所周知的原因，日历功能暂只支持 iPhone，而且功能不是很稳定；
 
-3. 由于天气数据来自国外的 OpenWeatherMap 网站，部分地区数据可能不够准确，请以天气预报或手机上其他天气 APP 为准;
+3. 默认关闭空气质量功能（减少对 PM25.in 网站的无效请求），需要开启请向 [PM25.in](http://pm25.in/api_doc) 网站申请 AppKey 并谨慎使用；
 
-4. 在实时语音识别功能完成开发之前，另外提供了手工访问接口（访问 http://<服务器IP>:8080/server/talk.html 网页），可以手动输入和 AI 对话（略蛋疼的功能）。
+4. 由于天气数据来自国外的 OpenWeatherMap 网站，部分地区数据可能不够准确，请以天气预报或手机上其他天气 APP 为准;
+
+5. 在实时语音识别功能完成开发之前，另外提供了手工访问接口（访问 http://<服务器IP>:8080/server/talk.html 网页），可以手动输入和 AI 对话（略蛋疼的功能）。
 
 ## 鸣谢
 
----
+感谢以下单位为本项目提供的支持：
 
->TBC...
+- [OpenWeatherMap](http://openweathermap.org/)
+- [PM25.in](http://pm25.in/api_doc)
+- [图灵机器人](www.tuling123.com)
+

@@ -10,7 +10,7 @@ Desktop.ini
 
 # Package Files #
 *.jar
-*.war
+#*.war
 *.ear
 
 # Java Project

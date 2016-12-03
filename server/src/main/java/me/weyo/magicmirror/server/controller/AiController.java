@@ -4,9 +4,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 import org.json.JSONObject;
+
+import me.weyo.magicmirror.server.Parameters;
 
 /**
  * @author WeYo
@@ -14,6 +17,8 @@ import org.json.JSONObject;
 public class AiController implements Callable<String> {
     
     private String message;
+    
+    private Map<String, String> aiParams = Parameters.getAiParams();
 
     public AiController(String message) {
         this.message = message;
@@ -21,12 +26,11 @@ public class AiController implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        JSONObject jsonObj = new JSONObject(message);
         String rurl = "http://www.tuling123.com/openapi/api?key="
-                + jsonObj.getString("key") 
-                + "&info=" + jsonObj.getString("info")
-                + "&loc=" + jsonObj.getString("loc")
-                + "&userid=" + jsonObj.getInt("id");
+                + aiParams.get("key")
+                + "&info=" + message
+                + "&loc=" + aiParams.get("loc")
+                + "&userid=" + aiParams.get("id");
         
         URL url = new URL(rurl);
         URLConnection conn = url.openConnection();
@@ -39,7 +43,8 @@ public class AiController implements Callable<String> {
             sb.append(inputLine + "\n");
         }
         br.close();
-        jsonObj = new JSONObject(sb.toString());
+        
+        JSONObject jsonObj = new JSONObject(sb.toString());
         
         String ret = null;
         switch (jsonObj.getInt("code")) {

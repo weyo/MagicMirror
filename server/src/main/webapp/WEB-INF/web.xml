@@ -35,4 +35,8 @@
         <servlet-name>Command</servlet-name>
         <url-pattern>/command</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InitServlet</servlet-name>
+        <url-pattern>/init</url-pattern>
+    </servlet-mapping>
 </web-app>

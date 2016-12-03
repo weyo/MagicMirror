@@ -31,6 +31,8 @@ jQuery(document).ready(function($) {
 	var compliment;
 
     moment.locale(config.lang);
+    
+    config.init();
 
 	time.init();
 

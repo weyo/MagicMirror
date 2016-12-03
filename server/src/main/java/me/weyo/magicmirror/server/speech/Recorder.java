@@ -1,7 +1,5 @@
 package me.weyo.magicmirror.server.speech;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,13 +24,10 @@ public class Recorder implements Runnable {
             try {
                 cmd = cmdService.takeCommand();
                 aiService.request(cmd);
-                JSONObject jsonObj = new JSONObject(cmd);
-                webSocketService.sendMessage("1|" + jsonObj.getString("info"));
+                webSocketService.sendMessage("1|" + cmd);
                 webSocketService.sendMessage(aiService.getResponse());
             } catch (InterruptedException e) {
                 LOG.error("WebSocket 消息线程异常|cmd:" + cmd, e);
-            } catch (JSONException e) {
-                LOG.error("Recorder 线程 JSON 解析异常|cmd:" + cmd, e);
             }
             LOG.debug("已处理一次请求:" + cmd);
         }

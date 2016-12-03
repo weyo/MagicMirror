@@ -30,9 +30,9 @@ public class Recorder implements Runnable {
                 webSocketService.sendMessage("1|" + jsonObj.getString("info"));
                 webSocketService.sendMessage(aiService.getResponse());
             } catch (InterruptedException e) {
-                LOG.error("WebSocket 消息线程异常", e);
+                LOG.error("WebSocket 消息线程异常|cmd:" + cmd, e);
             } catch (JSONException e) {
-                LOG.error("Recorder 线程 JSON 解析异常", e);
+                LOG.error("Recorder 线程 JSON 解析异常|cmd:" + cmd, e);
             }
             LOG.debug("已处理一次请求:" + cmd);
         }

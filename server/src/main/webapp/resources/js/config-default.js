@@ -59,3 +59,33 @@ var config = {
 		feed: 'http://rss.sina.com.cn/roll/finance/hot_roll.xml',
     }
 }
+
+config.doGet = function(url) {
+    try {
+        xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest()
+                : new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (e) {
+    }
+
+    xmlhttp.onreadystatechange = function() {
+        if ((xmlhttp.readyState == 4) && (xmlhttp.status == 200)) {
+            console.log(xmlhttp.responseText);
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send(null);
+}
+
+config.getParams = function(callback) {
+    var aiParams = new Object();
+    aiParams.key = ai.appKey;
+    aiParams.loc = encodeURIComponent(ai.loc);
+    aiParams.id = ai.id;
+    url = "init?ai=" + JSON.stringify(aiParams);
+    
+    callback(url);
+}
+
+config.init = function() {
+    this.getParams(this.doGet);
+}

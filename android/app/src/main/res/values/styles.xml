@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="HoloTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    </style>
+
+    <style name="Theme.Application" parent="@style/Theme.AppCompat" />
+
+    <style name="Theme.Settings" parent="@style/Theme.Application">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+
+        <item name="toolbarStyle">@style/Widget.Toolbar</item>
+    </style>
+
+    <style name="Widget.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="navigationIcon">?attr/homeAsUpIndicator</item>
+    </style>
+</resources>

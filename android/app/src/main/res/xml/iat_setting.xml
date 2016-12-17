@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<EditTextPreference
+		android:key="@string/pref_key_url"
+		android:title="服务器地址" />
+
+    <ListPreference
+        android:key="@string/pref_key_language"
+        android:title="语言"
+        android:entries="@array/language_entries"
+        android:entryValues="@array/language_values" />
+
+    <ListPreference
+        android:key="@string/pref_key_punc"
+        android:title="标点符号"
+        android:entries="@array/punc_entries"
+        android:entryValues="@array/punc_values" />
+
+	<EditTextPreference
+		android:key="@string/pref_key_vadbos"
+		android:title="语音输入前端点超时时间" />
+
+	<EditTextPreference
+		android:key="@string/pref_key_vadeos"
+		android:title="语音输入后端点超时时间" />
+
+</PreferenceScreen>
+

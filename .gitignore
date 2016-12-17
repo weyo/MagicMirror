@@ -26,3 +26,38 @@ hs_err_pid*
 
 # Privacy protection
 config.js
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# generated files
+gen/
+out/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Windows thumbnail db
+.DS_Store
+
+# IDEA/Android Studio project files, because
+# the project can be imported from settings.gradle
+*.iml
+.idea/*
+# Forcibly including certain files we want propagated.
+!\.idea/codeStyleSettings.xml
+!\.idea/copyright
+
+# Gradle cache
+.gradle
+
+# Sandbox stuff
+_sandbox
+
+# xf
+*.so

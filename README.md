@@ -1,13 +1,14 @@
 MagicMirror 魔镜
 ===========
 
+![logo](pics/logo_git_o.png)
+
 ![v0.2](pics/v0.2.png)
 
-<img src="pics/v0.3.png" width = "500" height = "660" alt="pic3" align=center />
 
 ## 说明
 
-本项目为个人定制版魔镜。与[原版](https://github.com/MichMich/MagicMirror)的主要区别有：
+本项目为私人定制版魔镜。与[原版](https://github.com/MichMich/MagicMirror)的主要区别有：
 
 - 基于 Java Servlet 重构，全面修改默认程序环境为中文，包括：
 	- 语言：中文
@@ -24,6 +25,8 @@ MagicMirror 魔镜
 - 调整配置文件上传方式
 
 - 取消版本自动更新功能
+
+<img src="pics/v0.3.png" width = "500" height = "660" alt="pic3" align=center />
 
 ## 使用方法
 

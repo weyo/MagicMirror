@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- dashWidth指的是边线的长度 width指的是边线的宽度 -->
+
+
+    <solid android:color="@color/transparent_background" />
+
+    <corners android:radius="8dp" />
+
+</shape>

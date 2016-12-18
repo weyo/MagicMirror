@@ -43,7 +43,12 @@ ai.saying = function (data) {
             line = dt_head + loc + dt_mid1 + avatar + dt_mid2 + loc + dt_mid3 + words.slice(0, sn) + dt_tail;
             $(ai.sayingLocation).append(line);
             ai.scrollWords();
-            line = '<dt><IFRAME name="XXX" frameborder=0 width=390px height=480px src="' + words.slice(sn + 1) + '"></IFRAME></dt>';
+            realUrl = words.slice(sn + 1);
+            // 临时修复返回的去哪儿网链接异常问题
+            if (realUrl.indexOf("touch.qunar.com/h5/flight/flightlist?bd_source=chongdong&") > 0) {
+                realUrl.replace("bd_source=chongdong&", "");
+            }
+            line = '<dt><IFRAME name="XXX" frameborder=0 width=390px height=480px src="' + realUrl + '"></IFRAME></dt>';
             break;
         default:
             console.log('不支持的数据:' + data);

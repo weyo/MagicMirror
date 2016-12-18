@@ -36,6 +36,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import me.weyo.magicmirror.android.service.HttpRequest;
 
@@ -129,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 window.setFocusable(true);
                 window.setOutsideTouchable(true);
                 window.update();
-                window.showAtLocation(findViewById(R.id.activity_main), Gravity.CENTER, 0, 450);
+                window.showAtLocation(findViewById(R.id.activity_main), Gravity.CENTER, 0, 380);
                 break;
             default:
                 break;
@@ -248,7 +250,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private void sendMessage(final String msg) {
         final String url = "http://" + prefUrl + "/server/command";
         // 为网络访问操作建立子线程
-        new Thread(new Runnable() {
+        ExecutorService exec = Executors.newSingleThreadExecutor();
+        exec.submit(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -259,12 +262,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     Log.e(TAG, "魔镜服务器连接异常", e);
                 }
             }
-        }).start();
+        });
+        exec.shutdown();
     }
 
     private void showTip(final String str) {
+        // 防止弹出空提示
+        if (str == null || str.equals("")) {
+            return;
+        }
+
         if(mToast == null) {
             mToast = Toast.makeText(this, "", Toast.LENGTH_LONG);
+            mToast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM, 0, 380);
         }
         mToast.setText(str);
         mToast.show();

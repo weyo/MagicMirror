@@ -26,7 +26,7 @@ MagicMirror 魔镜
 
 - 取消版本自动更新功能
 
-<img src="pics/v0.3.png" width = "500" height = "660" alt="pic3" align=center />
+<img src="pics/v0.3.png" width = "360" height = "476" alt="pic3" align=center />
 
 ## 使用方法
 
@@ -50,6 +50,8 @@ MagicMirror 魔镜
 5. 编译后台程序（本项目 bin 目录中提供有预编译版本，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置）并启动 Tomcat 服务器。
 
 >完整的软硬件配置说明参考本人博客说明（TBC
+
+<img src="pics/screenshot.jpg" width = "360" height = "640" alt="pic4" align=center />
 
 ## 其他说明
 

@@ -49,6 +49,8 @@ MagicMirror 魔镜
 
 5. 编译后台程序（本项目 bin 目录中提供有预编译版本，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置）并启动 Tomcat 服务器。
 
+6. 启动魔小镜 APP 进行语音输入。
+
 >完整的软硬件配置说明参考本人博客说明（TBC
 
 <img src="pics/screenshot.jpg" width = "360" height = "640" alt="pic4" align=center />
@@ -69,9 +71,10 @@ MagicMirror 魔镜
 
 ## 鸣谢
 
-感谢以下单位为本项目提供的支持：
+感谢以下单位为本项目提供的支持（排名不分先后）：
 
 - [OpenWeatherMap](http://openweathermap.org/)
 - [PM25.in](http://pm25.in/api_doc)
 - [图灵机器人](www.tuling123.com)
+- [讯飞开放平台](http://www.xfyun.cn/)
 

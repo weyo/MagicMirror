@@ -39,7 +39,7 @@ MagicMirror 魔镜
 	- 所在城市
 	- APPID（在 OpenWeatherMap 网站上注册用户获取免费的 APPID）
 	- AppKey（在 [PM25.in](http://pm25.in/api_doc) 网站上申请的 AppKey）
-	- Key（在 [图灵机器人](www.tuling123.com) 网站上申请的 Key）
+	- Key（在 [图灵机器人](http://www.tuling123.com) 网站上申请的 Key）
 	- 欢迎词
 	- 最大日程数量及个人日程表链接（iPhone 可以在 iCloud 中将某个日历设为公开日历得到）
 	- 新闻 RSS （可自行搜索可用的新闻 RSS）
@@ -75,6 +75,6 @@ MagicMirror 魔镜
 
 - [OpenWeatherMap](http://openweathermap.org/)
 - [PM25.in](http://pm25.in/api_doc)
-- [图灵机器人](www.tuling123.com)
+- [图灵机器人](http://www.tuling123.com)
 - [讯飞开放平台](http://www.xfyun.cn/)
 

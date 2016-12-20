@@ -121,17 +121,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             // 帮助
             case R.id.help:
                 //showTip("点击话筒图标开始说话");
-                View popupView = LayoutInflater.from(this)
-                        .inflate(R.layout.help_window, new RelativeLayout(this), true);
-                PopupWindow window = new PopupWindow(popupView,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT, true);
-                window.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
-                window.setTouchable(true);
-                window.setFocusable(true);
-                window.setOutsideTouchable(true);
-                window.update();
-                window.showAtLocation(findViewById(R.id.activity_main), Gravity.CENTER, 0, 380);
+                //showPopupWindow();
+                showHelpDialog();
                 break;
             default:
                 break;
@@ -257,7 +248,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 try {
                     HttpRequest.sendGet(url, "message=" + msg);
                 } catch (IOException e) {
-                    showTip("向魔镜发送语音消息出现异常，" +
+                    Log.d(TAG, "向魔镜发送语音消息出现异常，" +
                             "请检查魔镜服务器地址配置是否正确、魔镜程序是否正确开启！");
                     Log.e(TAG, "魔镜服务器连接异常", e);
                 }
@@ -266,7 +257,42 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         exec.shutdown();
     }
 
-    private void showTip(final String str) {
+    /**
+     * 使用 PopupWindow 弹出帮助提示
+     */
+    @SuppressWarnings("unused")
+    private void showPopupWindow() {
+        View popupView = LayoutInflater.from(this)
+                .inflate(R.layout.help_window, new RelativeLayout(this), true);
+        PopupWindow window = new PopupWindow(popupView,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT, true);
+        window.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        window.setTouchable(true);
+        window.setFocusable(true);
+        window.setOutsideTouchable(true);
+        window.update();
+        window.showAtLocation(findViewById(R.id.activity_main), Gravity.CENTER, 0, 380);
+    }
+
+    /**
+     * 显示帮助对话框
+     */
+    private void showHelpDialog() {
+        android.support.v7.app.AlertDialog.Builder builder =
+                new android.support.v7.app.AlertDialog.Builder(this);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setTitle("关于");
+        builder.setMessage("这是魔镜的语音输入小助手，您可以点击下方的话筒图标开始说话。");
+        builder.setPositiveButton("确定", null);
+        builder.show();
+    }
+
+    /**
+     * 显示 Toast
+     * @param str 待显示的字符串信息
+     */
+    private void showTip(String str) {
         // 防止弹出空提示
         if (str == null || str.equals("")) {
             return;

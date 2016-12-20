@@ -3,7 +3,8 @@
 
 	<EditTextPreference
 		android:key="@string/pref_key_url"
-		android:title="服务器地址" />
+		android:title="服务器地址"
+		android:defaultValue="60.205.205.171:8080"/>
 
     <ListPreference
         android:key="@string/pref_key_language"

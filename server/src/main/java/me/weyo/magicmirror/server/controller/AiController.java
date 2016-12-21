@@ -55,7 +55,7 @@ public class AiController implements Callable<String> {
             ret = "2|" + jsonObj.getString("text") + "|" + jsonObj.getString("url");
             break;
         default:
-            ret = "0|" + jsonObj.getString("对不起，亲，我现在还听不懂这句话");
+            ret = "0|对不起，亲，我现在还听不懂这句话";
             break;
         }
         

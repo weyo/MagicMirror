@@ -34,6 +34,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.concurrent.ExecutorService;
@@ -240,13 +241,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
      */
     private void sendMessage(final String msg) {
         final String url = "http://" + prefUrl + "/server/command";
+
         // 为网络访问操作建立子线程
         ExecutorService exec = Executors.newSingleThreadExecutor();
         exec.submit(new Runnable() {
             @Override
             public void run() {
                 try {
-                    HttpRequest.sendGet(url, "message=" + msg);
+                    String encodedMsg = URLEncoder.encode(msg,"UTF-8");
+                    HttpRequest.sendGet(url, "message=" + encodedMsg);
                 } catch (IOException e) {
                     Log.d(TAG, "向魔镜发送语音消息出现异常，" +
                             "请检查魔镜服务器地址配置是否正确、魔镜程序是否正确开启！");

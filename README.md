@@ -51,7 +51,10 @@ MagicMirror 魔镜
 
 6. 启动魔小镜 APP 进行语音输入。
 
->完整的软硬件配置说明参考本人博客说明（TBC
+>完整的软硬件配置说明请参考本人博客说明：
+>
+>- [魔镜制作——硬件篇](http://weyo.me/pages/techs/magic-mirror-hardware/)
+>- [魔镜制作——软件篇](http://weyo.me/pages/techs/magic-mirror-software/)
 
 <img src="pics/screenshot.jpg" width = "360" height = "640" alt="pic4" align=center />
 

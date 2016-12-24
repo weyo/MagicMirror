@@ -3,14 +3,29 @@
     <string name="start">Start</string>
     <!-- 请替换成在语音云官网申请的appid -->
     <string name="app_id">12345678</string>
-    <string name="help">Help</string>
+    <string name="help">帮助</string>
     <string name="logo">logo</string>
     <string name="speaker">speaker</string>
     <string name="help_words">点击话筒开始说话</string>
+    <string name="setting">设置</string>
+    <string name="about">关于</string>
+    <string name="about_app_name">魔小镜 v1.0</string>
+    <string name="app_intro">说明</string>
+    <string name="app_project_addr">项目地址</string>
+    <string name="app_info">魔小镜是“魔镜”的配套语音输入小助手。\n使用前请配置好魔镜服务器地址。</string>
+    <string name="project_info">https://github.com/weyo/MagicMirror</string>
+    <string name="setting_items_info">【设置选项说明】\n
+        服务器地址：魔镜服务器后台地址（默认为 Demo 服务器地址）；\n
+        语言：语音输入语言；\n
+        标点符号：语音识别结果是否带有标点符号；\n
+        语音输入前端点超时时间：静音时间，即开始录音之后用户多长时间不说话则当做超时处理；\n
+        语音输入后端点超时时间：后端点静音检测时间，即用户停止说话多长时间内即认为不再输入， 自动停止录音。
+    </string>
+    <string name="copyright">Powered by \@weyo</string>
+    <string name="tech_support">本应用语音技术由科大讯飞提供</string>
     <!-- 听写 -->
     <string name="text_begin">请开始说话…</string>
     <string name="text_begin_recognizer">开始音频流识别</string>
-    <string name="setting">设置</string>
     <string name="pref_key_url">url_preference</string>
     <string name="pref_default_url">设置魔镜后台服务器地址，例如：192.168.1.123:8080</string>
     <string name="pref_key_vadbos">iat_vadbos_preference</string>

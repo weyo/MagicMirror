@@ -26,5 +26,13 @@
 		android:key="@string/pref_key_vadeos"
 		android:title="语音输入后端点超时时间" />
 
+    <PreferenceScreen
+        android:key="app_about"
+        android:title="@string/about" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="me.weyo.magicmirror.android"
+            android:targetClass="me.weyo.magicmirror.android.AboutActivity" />
+    </PreferenceScreen>
 </PreferenceScreen>
 

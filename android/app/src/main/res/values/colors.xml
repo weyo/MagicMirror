@@ -17,4 +17,6 @@
     <color name="transparent_background">#70000000</color>
     <!-- 透明背景色 -->
     <color name="transparent">#00000000</color>
+    <color name="gainsboro">#DCDCDC</color>
+    <color name="black">#000000</color>
 </resources>

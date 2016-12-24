@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         android.support.v7.app.AlertDialog.Builder builder =
                 new android.support.v7.app.AlertDialog.Builder(this);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setTitle("关于");
+        builder.setTitle("帮助");
         builder.setMessage("这是魔镜的语音输入小助手，您可以点击下方的话筒图标开始说话。");
         builder.setPositiveButton("确定", null);
         builder.show();

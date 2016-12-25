@@ -47,7 +47,7 @@ MagicMirror 魔镜
 
 4. 根据个人爱好修改 AI 及用户头像；
 
-5. 编译后台程序（本项目 bin 目录中提供有预编译版本，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置）并启动 Tomcat 服务器。
+5. 编译后台程序（本项目 bin 目录中提供有预编译版本，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置），将生成的 war 包放入 Tomcat 的 webapps 目录下，执行 Tomcat 的 bin 目录下的 startup.sh 启动 Tomcat 服务器。
 
 6. 启动魔小镜 APP 进行语音输入。
 

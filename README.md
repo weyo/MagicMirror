@@ -30,7 +30,7 @@ MagicMirror 魔镜
 
 ## 使用方法
 
-1. 将本项目 clone 到本地，在 IDE 中导入其中的 `server` 目录；
+1. 将本项目 clone 到本地，根据需要在 IDE 中导入其中的 `server` 目录；
 
 2. 将配置文件 `server/src/main/webapp/resources/js/config-default.js` 的文件名修改为 `config.js`，或者复制该文件，将新文件重命名为 `config.js`；
 
@@ -47,7 +47,7 @@ MagicMirror 魔镜
 
 4. 根据个人爱好修改 AI 及用户头像；
 
-5. 编译后台程序（本项目 bin 目录中提供有预编译版本 `server.war`，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置），将生成的 war 包放入 Tomcat 的 webapps 目录下，执行 Tomcat 的 bin 目录下的 startup.sh 启动 Tomcat 服务器。
+5. 使用 Maven（`mvn clean install`）编译后台程序（本项目 bin 目录中提供有预编译版本 `server.war`，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置），将生成的 war 包放入 Tomcat 的 webapps 目录下，执行 Tomcat 的 bin 目录下的 startup.sh 启动 Tomcat 服务器。
 
 6. 启动魔小镜 APP 进行语音输入。
 

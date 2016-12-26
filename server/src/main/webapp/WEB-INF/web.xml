@@ -3,8 +3,14 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    <display-name>Archetype Created Web Application</display-name>
-
+    <display-name>Magic Mirror Server</display-name>
+    
+    <listener>
+        <listener-class>
+            me.weyo.magicmirror.server.listener.ServerListener
+        </listener-class>
+    </listener>
+    
     <servlet>
         <servlet-name>Calendar</servlet-name>
         <servlet-class>me.weyo.magicmirror.server.controller.CalendarController</servlet-class>
@@ -13,7 +19,7 @@
         <servlet-name>AQI</servlet-name>
         <servlet-class>me.weyo.magicmirror.server.controller.AqiController</servlet-class>
     </servlet>
-        <servlet>
+    <servlet>
         <servlet-name>Command</servlet-name>
         <servlet-class>me.weyo.magicmirror.server.controller.HttpCommandController</servlet-class>
     </servlet>
@@ -22,7 +28,7 @@
         <servlet-class>me.weyo.magicmirror.server.controller.InitController</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>Calendar</servlet-name>
         <url-pattern>/calendar</url-pattern>

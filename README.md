@@ -30,9 +30,9 @@ MagicMirror 魔镜
 
 ## 使用方法
 
-1. 将本项目 clone 到本地；
+1. 将本项目 clone 到本地，在 IDE 中导入其中的 `server` 目录；
 
-2. 将配置文件 `js/config-default.js` 的文件名修改为 `config.js`，或者复制该文件，将新文件重命名为 `config.js`；
+2. 将配置文件 `server/src/main/webapp/resources/js/config-default.js` 的文件名修改为 `config.js`，或者复制该文件，将新文件重命名为 `config.js`；
 
 3. 在 `config.js` 中根据个人需要修改以下配置信息：
 	- 时间格式
@@ -47,7 +47,7 @@ MagicMirror 魔镜
 
 4. 根据个人爱好修改 AI 及用户头像；
 
-5. 编译后台程序（本项目 bin 目录中提供有预编译版本，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置），将生成的 war 包放入 Tomcat 的 webapps 目录下，执行 Tomcat 的 bin 目录下的 startup.sh 启动 Tomcat 服务器。
+5. 编译后台程序（本项目 bin 目录中提供有预编译版本 `server.war`，该 war 包移除了 `config.js`，需要按照步骤2、3手动配置），将生成的 war 包放入 Tomcat 的 webapps 目录下，执行 Tomcat 的 bin 目录下的 startup.sh 启动 Tomcat 服务器。
 
 6. 启动魔小镜 APP 进行语音输入。
 
@@ -60,7 +60,7 @@ MagicMirror 魔镜
 
 ## 其他说明
 
-1. 本项目遵守 `MIT License`；
+1. APP 源码（`android` 目录）中移除了编译所需的讯飞 SDK，如果需要在 Android Studio 中导入项目，需要手动建立 `android/app/libs` 目录（并在其中放入讯飞 SDK 提供的 `Msc.jar` 和 `Sunflower.jar`）和 `android/app/src/main/jniLibs` 目录（并在其中放入讯飞 SDK 提供的 .so 文件），同时需要将 `android/app/src/main/AndroidManifest.xml` 和 `android/app/src/main/res/values/strings.xml` 中的 appkey 修改为在讯飞开放平台申请的 appkey；
 
 2. 由于某些众所周知的原因，日历功能暂只支持 iPhone，而且功能不是很稳定；
 

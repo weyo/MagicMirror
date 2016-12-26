@@ -16,13 +16,17 @@ public class Recorder implements Runnable {
     private WebSocketService webSocketService;
     private AiService aiService;
     private CommandService cmdService;
+    private volatile boolean isRunning = true;
 
     @Override
     public void run() {
-        while (true) {
+        while (isRunning) {
             String cmd = null;
             try {
                 cmd = cmdService.takeCommand();
+                if(cmd == null) {
+                    continue;
+                }
                 aiService.request(cmd);
                 webSocketService.sendMessage("1|" + cmd);
                 webSocketService.sendMessage(aiService.getResponse());
@@ -46,6 +50,10 @@ public class Recorder implements Runnable {
     public Recorder registerCommandService(CommandService commandService) {
         this.cmdService = commandService;
         return this;
+    }
+
+    public void shutdown() {
+        this.isRunning = false;
     }
 
 }

@@ -1,6 +1,7 @@
 package me.weyo.magicmirror.server.service;
 
 import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 基于枚举的单例模式
@@ -18,7 +19,7 @@ public enum CommandService {
     }
     
     public String takeCommand() throws InterruptedException {
-        return cmds.take();
+        return cmds.poll(2, TimeUnit.SECONDS);
     }
 
 }

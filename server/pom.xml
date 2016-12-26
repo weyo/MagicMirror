@@ -4,7 +4,7 @@
     <groupId>me.weyo.magicmirror</groupId>
     <artifactId>server</artifactId>
     <packaging>war</packaging>
-    <version>0.3</version>
+    <version>1.0</version>
     <name>server Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>

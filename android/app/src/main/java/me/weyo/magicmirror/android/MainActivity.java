@@ -43,7 +43,7 @@ import java.util.concurrent.Executors;
 import me.weyo.magicmirror.android.service.HttpRequest;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
-
+    // 开放统计页面名称
     private static String TAG = MainActivity.class.getSimpleName();
     // 语音听写对象
     private SpeechRecognizer mIat;

@@ -25,12 +25,16 @@ import java.util.HashMap;
  * 听写设置界面
  */
 public class IatSettings extends PreferenceActivity implements OnPreferenceChangeListener, OnSharedPreferenceChangeListener {
-	
-	public static final String PREFER_NAME = "com.iflytek.setting";
-    private Toolbar mActionBar;
-    private HashMap<String, String> prefKeyValue = new HashMap<>();
-    private HashMap<String, DialogPreference> keyPreference = new HashMap<>();
+    // 开放统计页面名称
+    private static String TAG = IatSettings.class.getSimpleName();
 
+    public static final String PREFER_NAME = "com.iflytek.setting";
+
+    private Toolbar mActionBar;
+
+    private HashMap<String, String> prefKeyValue = new HashMap<>();
+
+    private HashMap<String, DialogPreference> keyPreference = new HashMap<>();
 
     @SuppressWarnings("deprecation")
 	public void onCreate(Bundle savedInstanceState) {
@@ -119,6 +123,7 @@ public class IatSettings extends PreferenceActivity implements OnPreferenceChang
         super.onResume();
         // 开放统计 移动数据统计分析
         FlowerCollector.onResume(this);
+        FlowerCollector.onPageStart(TAG);
 
         initSummary();
         getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
@@ -129,6 +134,7 @@ public class IatSettings extends PreferenceActivity implements OnPreferenceChang
     protected void onPause() {
         super.onPause();
         // 开放统计 移动数据统计分析
+        FlowerCollector.onPageEnd(TAG);
         FlowerCollector.onPause(this);
 
         getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);

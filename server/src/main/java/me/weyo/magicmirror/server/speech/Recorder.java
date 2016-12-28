@@ -24,7 +24,12 @@ public class Recorder implements Runnable {
             String cmd = null;
             try {
                 cmd = cmdService.takeCommand();
-                if(cmd == null) {
+                if (cmd == null) {
+                    continue;
+                }
+                if (cmd.equals("")) {
+                    webSocketService.sendMessage("1|" + cmd);
+                    webSocketService.sendMessage("0|不说话的孩子不乖哦");
                     continue;
                 }
                 aiService.request(cmd);
